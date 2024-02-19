@@ -56,7 +56,7 @@ recipieDict_inv = dict()
 for k, val in recipieDict.items():
     for v in val:
         recipieDict_inv[v] = k
-
+print(recipieDict_inv)
 # We make a table of the order of each element
 print("Creating order table")
 startingElementsStr = ["Water","Fire","Wind","Earth"]
@@ -75,14 +75,14 @@ while len(exploreSet) != 0:
         for elemB in exploreThisItr.union(foundSet): # ... With everything we know about, including the new elements ...
             #...And see what we get
             val = recipieDict_inv.get((elemA,elemB))
+            
             # If we got nothing try the other direction we need not be picky on direction
             if val == None:
                 val = recipieDict_inv.get((elemB,elemA))    
-
             if val != None:
                 # If we got something
                 if(not (val in foundSet)): # And we haven't seen it before
-                    nextExploreSet.add(val) # Add it. 
+                    nextExploreSet.add(val) # Add it.
     # Set the orders
     for elem in exploreSet:
         orderTable[elem] = order
