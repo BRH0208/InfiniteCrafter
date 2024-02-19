@@ -51,7 +51,8 @@ class state:
         return len(self.path)# The time it has taken us is how long our path list is.
     # A* heuristic is the highest order of the needed elements. 
     def heuristic(self):
-        return max([orderTable[x] for x in self.needList])
+        maxOrder = max([orderTable[x] for x in self.needList]) # The highest order element
+        return maxOrder + (sum([(1 if orderTable[x] == maxOrder else 0) for x in self.needList]))
 
     # This is the value of this state according to A*
     def h(self):
@@ -213,4 +214,5 @@ if __name__ == '__main__':
     for elem in val:
         elemAsString = wordEncoder.inverse_transform([elem[0],elem[1]])
         print(elemAsString[0],"+",elemAsString[1])
-    sleep(60)
+    print("Done")
+    sleep(60) # This sleep does nothing, I have it because I hate consoles terminals on finish
