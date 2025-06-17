@@ -7,6 +7,7 @@ How to use:
 3) Wait. Every ten seconds it will provide debug information, including a number that roughly estimates how much progress it is making
 
 What is this:
+
   Infinitecraft is an "element-combining " game in which two "elements" can be combined to form a new element. This process is AI-generated in the game, leading to thousands of valid recipes. 
 This script can find the shortest combinations to make a desired element from the base elements. This problem is interesting, as the search space is extremely large.
 It works by first doing a forward pass to get the minimum "depth" of an item. This minimum depth is then used as a heuristic for A* search, which starts from the desired element and works backwards
