@@ -10,6 +10,7 @@ What is this:
 
 Infinitecraft is an "element-combining " game in which two "elements" can be combined to form a new element. This process is AI-generated in the game, leading to thousands of valid recipes. 
 This script can find the shortest combinations to make a desired element from the base elements. 
+
 ![Garage](https://github.com/user-attachments/assets/3e543a80-0610-4120-ac0e-7be5843644d2)
 
 This problem is interesting, as the search space is extremely large.
