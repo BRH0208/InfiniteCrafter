@@ -1,10 +1,10 @@
 This is a helper script for the game Infinite Craft(https://neal.fun/infinite-craft/)
-Given a dataset of recipies, it attempts to find an optimal path to create that item using an A* pathfinding algorithm
+Given a dataset of recipes, it attempts to find an optimal path to create that item using an A* pathfinding algorithm
 
 How to use: 
 1) Run InfiniteCraft.py. 
 2) Provide the element you want
-3) Wait. Every ten seconds it will provide debug information, including a number that roughly estimates how much progress it is making
+3) Wait. Every ten seconds, it will provide debug information, including a number that roughly estimates how much progress it is making
 
 What is this:
 
@@ -15,9 +15,11 @@ This problem is interesting, as the search space is extremely large.
 It works by first doing a forward pass to get the minimum "depth" of an item. This minimum depth is then used as a heuristic for A* search, which starts from the desired element and works backwards
 to find a path to the base elements. The heuristic lets the algorithm assume that a path will take no shorter than the depth of its simplest element, giving the algorithm a sense of "direction" towards simpler states. The path is guaranteed shortest only for combinations included in the dataset. 
 
-This repository contains .pkl files that are saved preproccessing steps for a large dictionary of valid combinations, 
-this speeds up processing but if you desire to use your own dataset, Encoder.py must be provided 'InfiniteCraft.tsv' as a tab-seperated value document in the format of
+This repository contains .pkl files that are saved from pre-processing steps for a large dictionary of valid combinations. 
+This speeds up processing, but if you desire to use your own dataset, Encoder.py must be provided 'InfiniteCraft.tsv' as a tab-separated value document in the format of
 ```
-input \t input \t output \n
+first \t second \t result
+first \t second \t result
+first \t second \t result
 ```
-with header line. For example, see included InfiniteCraft.tsv.
+With a header line. For example, see included InfiniteCraft.tsv.
